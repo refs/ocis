@@ -26,6 +26,69 @@ make generate build
 ./bin/ocis -h
 ```
 
+## Starting the fullstack server
+
+In order to use micro to access the extensions you'd need to start the runtime first:
+
+```sh
+micro
+```
+
+That will start:
+
+```sh
+❯ micro list services
+go.micro
+go.micro.api
+go.micro.bot
+go.micro.broker
+go.micro.http.broker
+go.micro.monitor
+go.micro.network
+go.micro.proxy
+go.micro.registry
+go.micro.router
+go.micro.runtime
+go.micro.store
+go.micro.tunnel
+go.micro.web
+```
+
+Then start the ocis fullstack server
+
+```sh
+./bin/ocis server
+```
+
+This starts every extension along with the micro's services:
+
+The resulting state is something like this:
+
+```
+go.micro
+go.micro.api
+go.micro.api.hello
+go.micro.bot
+go.micro.broker
+go.micro.http.broker
+go.micro.monitor
+go.micro.network
+go.micro.proxy
+go.micro.registry
+go.micro.router
+go.micro.runtime
+go.micro.store
+go.micro.tunnel
+go.micro.web
+go.micro.web.graph
+go.micro.web.hello
+go.micro.web.konnectd
+go.micro.web.ocs
+go.micro.web.phoenix
+go.micro.web.webdav
+```
+
+
 ## Security
 
 If you find a security issue please contact security@owncloud.com first.
